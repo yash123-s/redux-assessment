@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Component } from 'react';
 import './Login.css';
+import browserHistory from '../Utils/browserHistory'
 
 const initialState = {
   name: "",
@@ -27,8 +28,8 @@ export default class Login extends React.Component {
       nameError = "name cannot be blank";
     }
 
-    if (!this.state.password.includes("A-z|1-9")) {
-        passwordError = "invalid password, should include @/!/*/&";
+    if (!this.state.password ){
+        passwordError = "password cannot be blank";
     }
 
     if (passwordError || nameError) {
@@ -46,11 +47,13 @@ export default class Login extends React.Component {
     this.setState(initialState);
     }
   };
-
+move(){
+  browserHistory.push('/reg');
+}
   render() {
     return (
       <div>
-       <h1>Login PaGE</h1>
+       <h1>Login Page</h1>
       <form onSubmit={this.handleSubmit}>
         <div>
           <label>UserName :</label>
@@ -65,12 +68,8 @@ export default class Login extends React.Component {
         </div>
        <div><button type="submit">Login</button></div> 
       </form>
-      <div><button>Register</button></div>
+      <div><button onClick={this.move}>Register</button></div>
       </div>
     );
   }
 }
-// // export default Login;
-
-
-

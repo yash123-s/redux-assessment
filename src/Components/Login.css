@@ -2,6 +2,12 @@
     margin-top: 900px;
 }
 .error{
- font-size: 14;
- color: blue;
+ font-size: 12px;
+ color:red;
+}
+form{
+    
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 30px;
 }
